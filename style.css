@@ -827,204 +827,532 @@ ul {
 
 /* ================= EDUCATION ================= */
 
-/* Education Timeline */
-.education .timeline {
+/* =========================================================
+   EDUCATION SECTION
+   ========================================================= */
+
+.education {
     position: relative;
-    max-width: 1000px;
-    margin: 50px auto 0;
+    padding: 80px 0;
+    background: #f8f9fc;
 }
 
-/* Center Timeline Line */
+.education .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.education .section-subtitle {
+    text-align: center;
+    color: #6c63ff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.education .section-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.education .section-title span {
+    color: #6c63ff;
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.education .timeline {
+    position: relative;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+
+/* CENTER LINE */
+
 .education .timeline::before {
     content: "";
     position: absolute;
+
     left: 50%;
     top: 0;
     bottom: 0;
+
     width: 3px;
-    background: var(--primary-color, #6c63ff);
+
+    background: linear-gradient(
+        to bottom,
+        #6c63ff,
+        #4f46e5
+    );
+
     transform: translateX(-50%);
+    border-radius: 10px;
 }
 
-/* Timeline Item */
+
+/* =========================================================
+   TIMELINE ITEM
+   ========================================================= */
+
 .timeline-item {
     position: relative;
+
     display: flex;
     align-items: center;
-    gap: 40px;
+
+    justify-content: space-between;
+
     width: 100%;
-    margin-bottom: 60px;
+
+    margin-bottom: 70px;
+
+    gap: 40px;
 }
 
-/* Alternate Left / Right */
+
+/* ALTERNATE SIDES */
+
 .timeline-item:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-/* ================= IMAGE ================= */
+
+/* =========================================================
+   TIMELINE DOT
+   ========================================================= */
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    background: #ffffff;
+
+    border: 4px solid #6c63ff;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 0 5px rgba(108, 99, 255, 0.12);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
 
 .timeline-image {
     width: 45%;
-    height: 230px;              /* SAME HEIGHT FOR ALL */
+    height: 240px;
+
     position: relative;
+
     z-index: 2;
-    flex-shrink: 0;             /* Prevents shrinking */
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #eee;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12);
 }
+
+
+/* ALL IMAGES SAME SIZE */
 
 .timeline-image img {
     width: 100%;
-    height: 100%;               /* Fills the container */
-    object-fit: cover;          /* Crops all images equally */
-    object-position: center;
-    border-radius: 18px;
+    height: 100%;
+
     display: block;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s ease;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
 }
 
-/* Image Hover */
-.timeline-image img:hover {
-    transform: scale(1.04);
+
+/* IMAGE HOVER */
+
+.timeline-image:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
 }
 
-/* ================= CONTENT ================= */
+
+/* =========================================================
+   CONTENT CARD
+   ========================================================= */
 
 .timeline-content {
     width: 45%;
-    padding: 25px;
-    background: #fff;
+
+    padding: 28px;
+
+    background: #ffffff;
+
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
     box-sizing: border-box;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid rgba(108, 99, 255, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Year */
+
+/* CARD HOVER */
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   YEAR
+   ========================================================= */
+
 .timeline-content .year {
     display: inline-block;
-    color: var(--primary-color, #6c63ff);
-    font-weight: 600;
+
+    color: #6c63ff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
     margin-bottom: 10px;
+
+    padding: 6px 12px;
+
+    background: rgba(108, 99, 255, 0.1);
+
+    border-radius: 20px;
 }
 
-/* Heading */
+
+/* =========================================================
+   H3 HEADING - BLUE
+   ========================================================= */
+
 .timeline-content h3 {
-    margin-bottom: 8px;
+    margin: 8px 0 10px;
+
+    color: #2563eb;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
 }
 
-/* Sub Heading */
+
+/* H3 SPAN */
+
+.timeline-content h3 span {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   H4
+   ========================================================= */
+
 .timeline-content h4 {
-    margin-bottom: 12px;
+    margin: 0 0 15px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #444;
 }
 
-/* Description */
+
+/* H4 LINK */
+
+.education-link {
+    color: #555;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.education-link:hover {
+    color: #6c63ff;
+}
+
+
+/* =========================================================
+   PARAGRAPH
+   ========================================================= */
+
 .timeline-content p {
-    line-height: 1.7;
+    margin: 0;
+
     color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.8;
 }
 
 
-/* ================= TABLET ================= */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
+
+    .education .timeline {
+        max-width: 90%;
+    }
 
     .timeline-item {
         gap: 25px;
     }
 
-    .timeline-image,
-    .timeline-content {
-        width: 45%;
-    }
-
     .timeline-image {
+        width: 44%;
         height: 220px;
     }
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-    /* Timeline Line */
-    .education .timeline::before {
-        left: 20px;
-    }
-
-    /* Timeline Item */
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 50px;
-        gap: 20px;
-        box-sizing: border-box;
-    }
-
-    /* Image & Content Full Width */
-    .timeline-image,
-    .timeline-content {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* SAME IMAGE SIZE ON MOBILE */
-    .timeline-image {
-        height: 200px;
-    }
-
-    .timeline-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    /* Content */
-    .timeline-content {
-        padding: 20px;
-    }
-}
-
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width: 480px) {
-
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        padding-left: 40px;
-        gap: 15px;
-    }
-
-    /* Same image dimensions */
-    .timeline-image {
-        width: 100%;
-        height: 180px;
-    }
-
-    .timeline-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     .timeline-content {
-        width: 100%;
-        padding: 18px;
+        width: 44%;
+        padding: 22px;
     }
 
     .timeline-content h3 {
         font-size: 20px;
     }
+}
 
-    .timeline-content h4 {
-        font-size: 16px;
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .education {
+        padding: 60px 0;
     }
 
+    .education .section-title {
+        font-size: 32px;
+        margin-bottom: 45px;
+    }
+
+
+    /* MOVE TIMELINE LINE LEFT */
+
+    .education .timeline::before {
+        left: 20px;
+
+        transform: none;
+    }
+
+
+    /* ITEM */
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        width: 100%;
+
+        padding-left: 50px;
+
+        gap: 20px;
+
+        box-sizing: border-box;
+
+        margin-bottom: 50px;
+    }
+
+
+    /* HIDE CENTER DOT POSITION */
+
+    .timeline-item::before {
+
+        left: 20px;
+        top: 50%;
+
+        width: 15px;
+        height: 15px;
+
+        transform: translate(-50%, -50%);
+
+        border-width: 3px;
+    }
+
+
+    /* SAME IMAGE SIZE */
+
+    .timeline-image {
+
+        width: 100%;
+
+        height: 220px;
+
+        flex-shrink: 0;
+
+        border-radius: 16px;
+    }
+
+
+    .timeline-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+
+    /* CONTENT */
+
+    .timeline-content {
+
+        width: 100%;
+
+        padding: 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .timeline-content h3 {
+
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .education .container {
+        width: 92%;
+    }
+
+    .education .section-title {
+        font-size: 28px;
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+
+        padding-left: 40px;
+
+        gap: 15px;
+    }
+
+
+    .education .timeline::before {
+        left: 15px;
+    }
+
+
+    .timeline-item::before {
+        left: 15px;
+
+        width: 13px;
+        height: 13px;
+    }
+
+
+    /* ALL SMALL-SCREEN IMAGES SAME SIZE */
+
+    .timeline-image {
+
+        width: 100%;
+
+        height: 190px;
+
+        border-radius: 14px;
+    }
+
+
+    .timeline-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    .timeline-content {
+
+        padding: 18px;
+    }
+
+
+    .timeline-content h3 {
+
+        font-size: 18px;
+    }
+
+
     .timeline-content p {
+
         font-size: 14px;
-        line-height: 1.6;
+
+        line-height: 1.7;
     }
 }
 /* ================= CERTIFICATES ================= */
